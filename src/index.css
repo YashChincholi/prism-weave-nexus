@@ -2,39 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* MAS WORLD Design System - Cinematic Light Theme 
+All colors MUST be HSL for proper theming.
 */
 
 @layer base {
   :root {
+    /* Core System Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 12% 8%;
 
+    /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 12% 8%;
 
+    /* Popover System */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 12% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Brand Primary (Deep Blue) */
+    --primary: 213 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 213 89% 68%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary (Soft Gray) */
+    --secondary: 210 17% 96%;
+    --secondary-foreground: 210 12% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted System */
+    --muted: 210 17% 96%;
+    --muted-foreground: 210 6% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent (Orange) */
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 25 95% 73%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Success Green */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Neutral System */
+    --neutral-50: 210 20% 98%;
+    --neutral-100: 210 17% 95%;
+    --neutral-200: 210 16% 90%;
+    --neutral-300: 210 14% 83%;
+    --neutral-400: 210 10% 64%;
+    --neutral-500: 210 6% 46%;
+    --neutral-600: 210 9% 31%;
+    --neutral-700: 210 10% 23%;
+    --neutral-800: 210 12% 16%;
+    --neutral-900: 210 12% 8%;
+
+    /* Borders */
+    --border: 210 14% 89%;
+    --input: 210 14% 89%;
+    --ring: 213 89% 48%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--neutral-50)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--neutral-50)) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(var(--neutral-900) / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(var(--neutral-900) / 0.1), 0 2px 4px -1px hsl(var(--neutral-900) / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(var(--neutral-900) / 0.1), 0 4px 6px -2px hsl(var(--neutral-900) / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(var(--neutral-900) / 0.1), 0 10px 10px -5px hsl(var(--neutral-900) / 0.04);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-cinematic: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     --radius: 0.5rem;
 
@@ -55,43 +101,7 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+  /* Dark theme disabled for MAS WORLD - focusing on premium light theme */
 }
 
 @layer base {
@@ -100,6 +110,130 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Remove default focus outline and add custom focus styles */
+  *:focus {
+    outline: none;
+  }
+
+  /* Custom selection colors */
+  *::selection {
+    background-color: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+  }
+}
+
+@layer components {
+  /* Cinematic button variants */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 
+           px-8 py-4 rounded-2xl font-semibold text-lg
+           shadow-elegant hover:shadow-glow
+           transition-all duration-300 ease-out
+           transform hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply border-2 border-primary text-primary bg-transparent
+           hover:bg-primary hover:text-primary-foreground
+           px-8 py-4 rounded-2xl font-semibold text-lg
+           transition-all duration-300 ease-out
+           transform hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90
+           px-8 py-4 rounded-2xl font-semibold text-lg
+           shadow-lg hover:shadow-xl
+           transition-all duration-300 ease-out
+           transform hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  /* Cinematic card styles */
+  .card-elevated {
+    @apply bg-card rounded-3xl shadow-lg hover:shadow-xl
+           transition-all duration-300 ease-out
+           transform hover:scale-[1.02];
+  }
+
+  .card-featured {
+    @apply bg-gradient-to-br from-primary/5 to-accent/5
+           border-2 border-primary/20 rounded-3xl
+           shadow-elegant hover:shadow-glow
+           transition-all duration-300 ease-out
+           transform hover:scale-[1.02];
+  }
+
+  /* Cinematic text styles */
+  .text-cinematic {
+    @apply bg-gradient-to-r from-neutral-900 to-neutral-700 bg-clip-text text-transparent;
+  }
+
+  .text-hero {
+    @apply text-6xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tight;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+
+  .container-responsive {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  /* Interactive animations */
+  .animate-fade-up {
+    animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+}
+
+/* Keyframe animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
